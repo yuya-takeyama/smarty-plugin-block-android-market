@@ -49,5 +49,7 @@ function smarty_block_android_market($params, $content, &$smarty)
             '<a href="%s%s%s"%s>%s</a>',
             $store, '/search?q=', rawurlencode($params['search']), $attr, $content
         );
+    } else {
+        return $content;
     }
 }

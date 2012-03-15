@@ -11,6 +11,21 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function 必要なパラメータが無ければリンク無しで文字列をそのまま返す()
+    {
+        $this->assertEquals(
+            'Example',
+            smarty_block_android_market(
+                array(),
+                'Example',
+                $this->smarty
+            )
+        );
+    }
+
+    /**
+     * @test
+     */
     public function appを指定するとアプリ詳細画面にリンクする()
     {
         $this->assertEquals(
