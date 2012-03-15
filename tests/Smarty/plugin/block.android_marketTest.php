@@ -52,4 +52,19 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
             )
         );
     }
+
+    /**
+     * @test
+     */
+    public function app_developer_search以外のパラメータはHTMLの属性になる()
+    {
+        $this->assertEquals(
+            '<a href="http://play.google.com/store/apps/details?id=com.example" id="foo" data-text="&amp;">Example</a>',
+            smarty_block_android_market(
+                array('app' => 'com.example', 'id' => 'foo', 'data-text' => '&'),
+                'Example',
+                $this->smarty
+            )
+        );
+    }
 }

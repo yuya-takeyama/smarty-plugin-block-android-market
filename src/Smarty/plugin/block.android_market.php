@@ -26,20 +26,28 @@ function smarty_block_android_market($params, $content, &$smarty)
 {
     $store = 'http://play.google.com/store';
 
+    $attr = '';
+    foreach ($params as $key => $value) {
+        if (in_array($key, array('app', 'developer', 'search'), true)) {
+            continue;
+        }
+        $attr .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES, 'UTF-8'));
+    }
+
     if (array_key_exists('app', $params)) {
         return sprintf(
-            '<a href="%s%s%s">%s</a>',
-            $store, '/apps/details?id=', rawurlencode($params['app']), $content
+            '<a href="%s%s%s"%s>%s</a>',
+            $store, '/apps/details?id=', rawurlencode($params['app']), $attr, $content
         );
     } else if (array_key_exists('developer', $params)) {
         return sprintf(
-            '<a href="%s%s%s">%s</a>',
-            $store, '/apps/developer?id=', rawurlencode($params['developer']), $content
+            '<a href="%s%s%s"%s>%s</a>',
+            $store, '/apps/developer?id=', rawurlencode($params['developer']), $attr, $content
         );
     } else if (array_key_exists('search', $params)) {
         return sprintf(
-            '<a href="%s%s%s">%s</a>',
-            $store, '/search?q=', rawurlencode($params['search']), $content
+            '<a href="%s%s%s"%s>%s</a>',
+            $store, '/search?q=', rawurlencode($params['search']), $attr, $content
         );
     }
 }
