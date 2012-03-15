@@ -44,9 +44,9 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     public function searchを指定すると検索結果にリンクする()
     {
         $this->assertEquals(
-            '<a href="http://play.google.com/store/search?q=word">Example</a>',
+            '<a href="http://play.google.com/store/search?q=some+word">Example</a>',
             smarty_block_android_market(
-                array('search' => 'word'),
+                array('search' => 'some word'),
                 'Example',
                 $this->smarty
             )
