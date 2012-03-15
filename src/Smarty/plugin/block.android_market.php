@@ -29,17 +29,17 @@ function smarty_block_android_market($params, $content, &$smarty)
     if (array_key_exists('appid', $params)) {
         return sprintf(
             '<a href="%s%s%s">%s</a>',
-            $store, '/apps/details?id=', urlencode($params['appid']), $content
+            $store, '/apps/details?id=', rawurlencode($params['appid']), $content
         );
     } else if (array_key_exists('developer', $params)) {
         return sprintf(
             '<a href="%s%s%s">%s</a>',
-            $store, '/apps/developer?id=', urlencode($params['developer']), $content
+            $store, '/apps/developer?id=', rawurlencode($params['developer']), $content
         );
     } else if (array_key_exists('search', $params)) {
         return sprintf(
             '<a href="%s%s%s">%s</a>',
-            $store, '/search?q=', urlencode($params['search']), $content
+            $store, '/search?q=', rawurlencode($params['search']), $content
         );
     }
 }
