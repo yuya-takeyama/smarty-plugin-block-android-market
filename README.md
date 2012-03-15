@@ -14,7 +14,7 @@ Synopsis
 ```
 {android_market app="com.example"}Example App{/android_market}
 
-<a href="http://play.google.com/store/apps/details?id=com.example">Example App</a>
+<a href="https://play.google.com/store/apps/details?id=com.example">Example App</a>
 ```
 
 ### Link to developer detail
@@ -22,7 +22,7 @@ Synopsis
 ```
 {android_market developer="example-developer"}Example Developer{/android_market}
 
-<a href="http://play.google.com/store/apps/developer?id=example-developer">Example Developer</a>
+<a href="https://play.google.com/store/apps/developer?id=example-developer">Example Developer</a>
 ```
 
 ### Link to search result
@@ -30,7 +30,7 @@ Synopsis
 ```
 {android_market search="some words"}Some Words{/android_market}
 
-<a href="http://play.google.com/store/search?q=some%20words">Some Words</a>
+<a href="https://play.google.com/store/search?q=some%20words">Some Words</a>
 ```
 
 ### Add HTML attributes
@@ -38,7 +38,7 @@ Synopsis
 ```
 {android_market app="com.example" id="foo" data_text="Bar & Baz"}Example App{/android_market}
 
-<a href="http://play.google.com/store/apps/details?id=com.example" id="foo" data-text="Bar &amp; Baz">Example App</a>
+<a href="https://play.google.com/store/apps/details?id=com.example" id="foo" data-text="Bar &amp; Baz">Example App</a>
 ```
 
 Author
