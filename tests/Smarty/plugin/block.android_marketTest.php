@@ -22,4 +22,19 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
             )
         );
     }
+
+    /**
+     * @test
+     */
+    public function developerを指定するとdeveloperにリンクする()
+    {
+        $this->assertEquals(
+            '<a href="http://play.google.com/store/apps/developer?id=foo-dev">Example</a>',
+            smarty_block_android_market(
+                array('developer' => 'foo-dev'),
+                'Example',
+                $this->smarty
+            )
+        );
+    }
 }

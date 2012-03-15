@@ -31,5 +31,10 @@ function smarty_block_android_market($params, $content, &$smarty)
             '<a href="%s%s%s">%s</a>',
             $store, '/apps/details?id=', urlencode($params['appid']), $content
         );
+    } else if (array_key_exists('developer', $params)) {
+        return sprintf(
+            '<a href="%s%s%s">%s</a>',
+            $store, '/apps/developer?id=', urlencode($params['developer']), $content
+        );
     }
 }
