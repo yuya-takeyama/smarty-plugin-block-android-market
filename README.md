@@ -9,23 +9,33 @@ Smarty block function plugin to link to Google Play apps store.
 Synopsis
 --------
 
+### Link to app detail
+
 ```
-{* Link to app detail *}
 {android_market app="com.example"}Example App{/android_market}
 
 <a href="http://play.google.com/store/apps/details?id=com.example">Example App</a>
+```
 
-{* Link to developer detail *}
+### Link to developer detail
+
+```
 {android_market developer="example-developer"}Example Developer{/android_market}
 
 <a href="http://play.google.com/store/apps/developer?id=example-developer">Example Developer</a>
+```
 
-{* Link to search result *}
+### Link to search result
+
+```
 {android_market search="some words"}Some Words{/android_market}
 
 <a href="http://play.google.com/store/search?q=some%20words">Some Words</a>
+```
 
-{* Add HTML attributes *}
+### Add HTML attributes
+
+```
 {android_market app="com.example" id="foo" data-text="Bar & Baz"}Example App{/android_market}
 
 <a href="http://play.google.com/store/apps/details?id=com.example" id="foo" data-text="Bar &amp; Baz">Example App</a>
