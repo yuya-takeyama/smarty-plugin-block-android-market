@@ -24,7 +24,7 @@
  */
 function smarty_block_android_market($params, $content, &$smarty)
 {
-    $store = 'http://play.google.com/store';
+    $store = 'https://play.google.com/store';
 
     $attr = '';
     foreach ($params as $key => $value) {

@@ -29,7 +29,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     public function appを指定するとアプリ詳細画面にリンクする()
     {
         $this->assertEquals(
-            '<a href="http://play.google.com/store/apps/details?id=com.example">Example</a>',
+            '<a href="https://play.google.com/store/apps/details?id=com.example">Example</a>',
             smarty_block_android_market(
                 array('app' => 'com.example'),
                 'Example',
@@ -44,7 +44,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     public function developerを指定すると開発者詳細画面にリンクする()
     {
         $this->assertEquals(
-            '<a href="http://play.google.com/store/apps/developer?id=foo-dev">Example</a>',
+            '<a href="https://play.google.com/store/apps/developer?id=foo-dev">Example</a>',
             smarty_block_android_market(
                 array('developer' => 'foo-dev'),
                 'Example',
@@ -59,7 +59,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     public function searchを指定すると検索結果にリンクする()
     {
         $this->assertEquals(
-            '<a href="http://play.google.com/store/search?q=some%20word">Example</a>',
+            '<a href="https://play.google.com/store/search?q=some%20word">Example</a>',
             smarty_block_android_market(
                 array('search' => 'some word'),
                 'Example',
@@ -74,7 +74,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     public function app_developer_search以外のパラメータはHTMLの属性になる()
     {
         $this->assertEquals(
-            '<a href="http://play.google.com/store/apps/details?id=com.example" id="foo" data-text="&amp;">Example</a>',
+            '<a href="https://play.google.com/store/apps/details?id=com.example" id="foo" data-text="&amp;">Example</a>',
             smarty_block_android_market(
                 array('app' => 'com.example', 'id' => 'foo', 'data-text' => '&'),
                 'Example',
@@ -89,7 +89,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     public function data_attribute_should_be_replaced_underscore_with_hyphen()
     {
         $this->assertEquals(
-            '<a href="http://play.google.com/store/apps/details?id=com.example" data-text="Foo &amp; Bar">Example</a>',
+            '<a href="https://play.google.com/store/apps/details?id=com.example" data-text="Foo &amp; Bar">Example</a>',
             smarty_block_android_market(
                 array('app' => 'com.example', 'data_text' => 'Foo & Bar'),
                 'Example',
