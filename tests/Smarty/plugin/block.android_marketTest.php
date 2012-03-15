@@ -11,7 +11,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function 必要なパラメータが無ければリンク無しで文字列をそのまま返す()
+    public function it_should_be_content_only_if_no_paramete_is_specified()
     {
         $this->assertEquals(
             'Example',
@@ -26,7 +26,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function appを指定するとアプリ詳細画面にリンクする()
+    public function it_should_be_link_to_app_detail_page_with_app_parameter()
     {
         $this->assertEquals(
             '<a href="https://play.google.com/store/apps/details?id=com.example">Example</a>',
@@ -41,7 +41,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function developerを指定すると開発者詳細画面にリンクする()
+    public function it_should_be_link_to_developer_page_with_developer_parameter()
     {
         $this->assertEquals(
             '<a href="https://play.google.com/store/apps/developer?id=foo-dev">Example</a>',
@@ -56,7 +56,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function searchを指定すると検索結果にリンクする()
+    public function it_should_be_search_result_with_search_parameter()
     {
         $this->assertEquals(
             '<a href="https://play.google.com/store/search?q=some%20word">Example</a>',
