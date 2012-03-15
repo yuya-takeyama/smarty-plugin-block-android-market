@@ -36,5 +36,10 @@ function smarty_block_android_market($params, $content, &$smarty)
             '<a href="%s%s%s">%s</a>',
             $store, '/apps/developer?id=', urlencode($params['developer']), $content
         );
+    } else if (array_key_exists('search', $params)) {
+        return sprintf(
+            '<a href="%s%s%s">%s</a>',
+            $store, '/search?q=', urlencode($params['search']), $content
+        );
     }
 }
