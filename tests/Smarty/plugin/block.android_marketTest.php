@@ -11,12 +11,12 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function idを指定するとdetailsにリンクする()
+    public function appを指定するとアプリ詳細画面にリンクする()
     {
         $this->assertEquals(
             '<a href="http://play.google.com/store/apps/details?id=com.example">Example</a>',
             smarty_block_android_market(
-                array('appid' => 'com.example'),
+                array('app' => 'com.example'),
                 'Example',
                 $this->smarty
             )
@@ -26,7 +26,7 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function developerを指定するとdeveloperにリンクする()
+    public function developerを指定すると開発者詳細画面にリンクする()
     {
         $this->assertEquals(
             '<a href="http://play.google.com/store/apps/developer?id=foo-dev">Example</a>',

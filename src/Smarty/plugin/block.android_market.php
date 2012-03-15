@@ -26,10 +26,10 @@ function smarty_block_android_market($params, $content, &$smarty)
 {
     $store = 'http://play.google.com/store';
 
-    if (array_key_exists('appid', $params)) {
+    if (array_key_exists('app', $params)) {
         return sprintf(
             '<a href="%s%s%s">%s</a>',
-            $store, '/apps/details?id=', rawurlencode($params['appid']), $content
+            $store, '/apps/details?id=', rawurlencode($params['app']), $content
         );
     } else if (array_key_exists('developer', $params)) {
         return sprintf(
