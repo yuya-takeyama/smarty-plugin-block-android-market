@@ -82,4 +82,19 @@ class Smarty_Plugin_Block_AndroidMarketTest extends PHPUnit_Framework_TestCase
             )
         );
     }
+
+    /**
+     * @test
+     */
+    public function data_attribute_should_be_replaced_underscore_with_hyphen()
+    {
+        $this->assertEquals(
+            '<a href="http://play.google.com/store/apps/details?id=com.example" data-text="Foo &amp; Bar">Example</a>',
+            smarty_block_android_market(
+                array('app' => 'com.example', 'data_text' => 'Foo & Bar'),
+                'Example',
+                $this->smarty
+            )
+        );
+    }
 }

@@ -31,6 +31,7 @@ function smarty_block_android_market($params, $content, &$smarty)
         if (in_array($key, array('app', 'developer', 'search'), true)) {
             continue;
         }
+        $key = preg_replace('/^data_/u', 'data-', $key);
         $attr .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES, 'UTF-8'));
     }
 

@@ -36,7 +36,7 @@ Synopsis
 ### Add HTML attributes
 
 ```
-{android_market app="com.example" id="foo" data-text="Bar & Baz"}Example App{/android_market}
+{android_market app="com.example" id="foo" data_text="Bar & Baz"}Example App{/android_market}
 
 <a href="http://play.google.com/store/apps/details?id=com.example" id="foo" data-text="Bar &amp; Baz">Example App</a>
 ```
